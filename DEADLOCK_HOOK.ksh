@@ -1,8 +1,9 @@
 #!/bin/ksh
-## DEADLOCK_HOOK.ksh  | Version 1 | Mike Krafick
+## DEADLOCK_HOOK.ksh | May 16, 2017 | Version 1 |  M. Krafick | No warranty implied, use at your own risk.
 ##
 ## Purpose: Returns a deadlock count based on a prvious and current deadlock count.
 ##          Used as a hook into a monitoring system or quick hit view of deadlocks between two runs
+##
 ## Granularity: Low. Total number only without detail
 ##
 ## Metrics shown:
@@ -13,6 +14,9 @@
 ## Script needs a place to write a file that us updated each run. Default is /tmp. Confirm executing ID has R/W access to this filesystem.
 ## The DB should be EXPLICITLY activated or this script could fail if there are zero connections and the DB deactivates itself as a result.
 ##     ex: db2 "activate database <dbname>"
+##
+## ID will need the following authority: 
+## GRANT EXECUTE ON FUNCTION SYSPROC.MON_GET_WORKLOAD TO <USER/GROUP/ROLE> <AUTH NAME>
 ##
 ## Usage: DEADLOCK_HOOK.ksh <dbname>
 
