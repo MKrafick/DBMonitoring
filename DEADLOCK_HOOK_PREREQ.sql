@@ -1,0 +1,36 @@
+-- Purpose: Creates necessary table supporting DEADLOCK_HOOK_TABLE.ksh
+--
+-- DEADLOCK_HOOK_TABLE_PREREQ.sql | May 19, 2017 | Version 1 |  M. Krafick | No warranty implied, use at your own risk.
+--
+--
+-- Execution notes:
+-- Instance ID or EXECUTE authority (example below) to run
+-- Can specify table in specific tablespace, uncomment "-- IN @TABLESPACE@" and replace @TABLESPACE@ as appropriate
+-- To grant monitoring ID (if not instance id), uncomment "-- GRANT ..." and replace @USER/GROUP/ROLE AUTH_NAME@ as appropriate
+--
+-- ID will need the following authority:
+-- GRANT EXECUTE ON FUNCTION SYSPROC.MON_GET_WORKLOAD TO <USER/GROUP/ROLE> <AUTH NAME>
+
+
+
+-- CREATE TABLE
+CREATE TABLE DBAMON.DBA_DEADLOCK_COUNTER (
+   CURRENT_COUNT INT,
+   DEADLOCK_TIME TIMESTAMP NOT NULL WITH DEFAULT CURRENT TIMESTAMP
+  )
+-- IN @TABLESPACE@
+;
+
+
+
+-- CREATE INDEX TO IMPROVE LOOKUP
+CREATE INDEX DBA_DEADLOCK_COUNTER_IDX01 on DBAMON.DBA_DEADLOCK_COUNTER (DEADLOCK_TIME ASC) ALLOW REVERSE SCANS;
+
+
+
+-- SEED TABLE WITH INITIAL ROW
+
+INSERT INTO DBAMON.DBA_DEADLOCK_COUNTER (CURRENT_COUNT) SELECT sum(DEADLOCKS) FROM TABLE(MON_GET_WORKLOAD(NULL,-1)) AS T;
+
+
+-- GRANT SELECT, INSERT, UPDATE, DELETE ON TABLE DBAMON.DBA_DEADLOCK_COUNTER @USER/GROUP/ROLE AUTH_NAME@;
