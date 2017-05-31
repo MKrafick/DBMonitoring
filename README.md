@@ -2,10 +2,10 @@
 Monitoring hooks for homegrown monitoring scripts and 3rd party monitoring tools.
 
 ### Disclaimer:
-An advanced scripter or SQL writer I am not. Use these at your own risk.
+I am not an advanced scripter or SQL writer. Use these at your own risk.
 
 ### Purpose:
-The following SQL (or script) were written to act as a hook into a 3rd party monitoring tool. These should capture some of the basics needed to monitor database health in conjunction with server level metrics. It is assumed you have the ability to watch server level metrics from your tool (CPU, Memory, Disk Utilization, etc).
+The following SQL (or script) were written to act as a hook into a 3rd party monitoring tool. These should capture some of the basics needed to monitor database health in conjunction with server level metrics. It is assumed you have the ability to watch server level metrics from your tool (CPU, Memory, Disk Utilization, etc). These were tested as a hook within the Dynatrace tool and performed as expected.
 
 ### Notes:
 These were specifically designed to take advantage of the newer MON_GET functions when possible. MON_GET is very lightweight compared to the more common and depricated database snapshot tables. Matter of fact, if you look at many DB2 plug ins for 3rd party tools you will see they probably hit deprecated tables.
