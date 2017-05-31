@@ -31,7 +31,12 @@ Returns a Pass (0) or Fail (1) for a TABLESPACE STATE that could lock out work f
 
 *DEADLOCK_HOOK.ksh*
 
-Returns a deadlock count based on a previous and current deadlock count.
+Returns a deadlock count based on a previous and current deadlock count. Requires DEADLOCK_HOOK_PREREQ.sql.
+
+
+*DEADLOCK_HOOK_PREREQ.sql*
+
+Creates pre-requisite table to support DEADLOCK_HOOK.ksh
 
 
 *HADR_CONGESTION_HOOK.sql*
