@@ -10,6 +10,7 @@
 --
 -- Execution notes: 
 -- Use -x flag to return only a value but not a header for homegrown/3rd party DB2 monitoring
+-- Note certian tablespace states are considered normal in this context. Edit "WHEN TBSP_STATE" as appropriate.
 --
 -- ID will need the following authority: 
 -- GRANT EXECUTE ON FUNCTION SYSPROC.MON_GET_TABLESPACE TO <USER/GROUP/ROLE> <AUTH NAME>

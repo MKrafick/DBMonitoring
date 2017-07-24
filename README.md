@@ -12,6 +12,11 @@ These were specifically designed to take advantage of the newer MON_GET function
 
 Deadlocks MUST be a before and after comparison. Selecting a deadlock count over and over will give you false positives. (Again, check out your DB2 plugin). To compare counts you will need to create a small table. See notes in DEADLOCK_HOOK.ksh.
 
+### Pre-Requisites:
+Read the comments at the top of each SQL or script to see if any authorities need to be granted for the query or script to run correctly.
+If run a DB2 instance ID, no grants may be needed but any ID used by a tool or user would need authority granted.
+Note that the deadlock monitor requires a small table be built within the monitored database for the monitoring SQL to run correctly.
+
 ### Available SQL and Scripts:
 
 *ACTIVE_APP_CONNECTION_HOOK.sql*
