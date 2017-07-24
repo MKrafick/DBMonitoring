@@ -14,7 +14,7 @@ Deadlocks MUST be a before and after comparison. Selecting a deadlock count over
 
 ### Pre-Requisites:
 Read the comments at the top of each SQL or script to see if any authorities need to be granted for the query or script to run correctly.
-If run a DB2 instance ID, no grants may be needed but any ID used by a tool or user would need authority granted.
+If run under the DB2 instance ID, no grants may be needed but any ID used by a tool or user would need authority granted.
 Note that the deadlock monitor requires a small table be built within the monitored database for the monitoring SQL to run correctly.
 
 ### Available SQL and Scripts:
