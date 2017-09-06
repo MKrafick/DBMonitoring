@@ -33,6 +33,9 @@ Returns a single value for DB2 active log utilization
 
 Returns a Pass (0) or Fail (1) for a TABLESPACE STATE that could lock out work from an application.
 
+*CHK_BKUP_HOOK.ksh*
+
+Returns a Pass (0) or Fail (1) for a backup file (qtantity) or age violation
 
 *DEADLOCK_HOOK.ksh*
 
