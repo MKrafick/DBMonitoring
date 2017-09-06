@@ -35,7 +35,7 @@ Returns a Pass (0) or Fail (1) for a TABLESPACE STATE that could lock out work f
 
 *CHK_BKUP_HOOK.ksh*
 
-Returns a Pass (0) or Fail (1) for a backup file (qtantity) or age violation
+Returns a Pass (0) or Fail (1) for a backup file (quantity) or age violation
 
 *DEADLOCK_HOOK.ksh*
 
