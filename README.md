@@ -2,7 +2,7 @@
 Monitoring hooks for homegrown monitoring scripts and 3rd party monitoring tools.
 
 ### Disclaimer:
-I am not an advanced scripter or SQL writer. Use these at your own risk.
+I am not an advanced scripter or SQL writer. No warranty implied, use these at your own risk.
 
 ### Purpose:
 The following SQL (or script) were written to act as a hook into a 3rd party monitoring tool. These should capture some of the basics needed to monitor database health in conjunction with server level metrics. It is assumed you have the ability to watch server level metrics from your tool (CPU, Memory, Disk Utilization, etc). These were tested as a hook within the Dynatrace tool and performed as expected.
