@@ -46,6 +46,14 @@ Returns a deadlock count based on a previous and current deadlock count. Require
 
 Creates and populates pre-requisite table to support DEADLOCK_HOOK.ksh
 
+*FS_TEST.ksh*
+
+Monitor filesystems for incorrect owner or groups (configured for db2inst1:db2iadm1, db2inst2:db2iadm2).
+Requires FT_TEST.cfg.ksh
+
+*FT_TEST.cfg.ksh*
+
+Prerequisite Config file containing variable settings (like e-mail) for FS_TEST.ksh.
 
 *HADR_CONGESTION_HOOK.sql*
 
